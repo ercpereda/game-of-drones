@@ -10,6 +10,11 @@ namespace GoD.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IList<GameScore> Scores { get; set; } 
+        public IList<GameScore> Scores { get; set; }
+
+        public Player()
+        {
+            Scores = new List<GameScore>();
+        }
     }
 }
