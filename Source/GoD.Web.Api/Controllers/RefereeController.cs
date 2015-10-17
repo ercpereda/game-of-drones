@@ -21,7 +21,7 @@ namespace GoD.Web.Api.Controllers
             _referee = referee;
         }
 
-        public IHttpActionResult GetDecide(string player1Move, string player2Move, string rulesetName = "Classic")
+        public IHttpActionResult GetDecide(string player1Move, string player2Move, int rulesetId)
         {
             var ruleset = _repository.GetRuleSet(rulesetName);
             if (ruleset == null)

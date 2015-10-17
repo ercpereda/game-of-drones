@@ -11,6 +11,11 @@ namespace GoD.Data
     {
         private GoDContext context = new GoDContext();
 
+        public RuleSet GetRuleSet(int id)
+        {
+            return context.RuleSets.FirstOrDefault(r => r.Id == id);
+        }
+        
         public RuleSet GetRuleSet(string name)
         {
             return context.RuleSets.FirstOrDefault(r => r.Name == name);
@@ -20,5 +25,6 @@ namespace GoD.Data
         {
             get { return context.RuleSets; }
         }
+        
     }
 }
