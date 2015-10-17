@@ -12,9 +12,9 @@
             $get: refereeService
         }
 
-        return provider;
-
         refereeService.$inject = ['$http', '$q', '$log'];
+
+        return provider;        
 
         function refereeService($http, $q, $log) {
             var service = {
@@ -40,4 +40,4 @@
             }
         }
     }
-});
+})();

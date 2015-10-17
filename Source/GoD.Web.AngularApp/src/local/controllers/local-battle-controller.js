@@ -3,9 +3,9 @@
         .module('gameOfDrones.local')
         .controller('LocalBattleController', localBattleController);
 
-    localBattleController.$inject = ['$rootScope'];
+    localBattleController.$inject = ['$rootScope', 'referee'];
 
-    function localBattleController($rootScope) {
+    function localBattleController($rootScope, referee) {
         var vm = this;
 
         vm.player1Name = $rootScope.player1;
@@ -25,7 +25,7 @@
             }
             else if (vm.currentPlayer === 2) {
                 vm.currentPlayer = 1;
-                refereeService.decide(vm.player1Play, option).then(
+                referee.decide(vm.player1Play, option).then(
                     function (data) {
                         vm.winner = data.winner;
                         if (data.winner === 1) {
