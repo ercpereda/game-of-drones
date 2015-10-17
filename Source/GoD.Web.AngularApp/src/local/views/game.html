@@ -4,11 +4,12 @@
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <h1>{{battleCtrl.player1Name}}: {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}}: {{battleCtrl.player2Score}}</h1>                
         </md-toolbar>
+        <md-button class="md-fab" aria-label='Play' ng-click="battleCtrl.play('papper')">H</md-button>
     </md-card>
     <md-card flex class="md-whiteframe-z2">
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <h1>Scores</h1>            
-        </md-toolbar>
+        </md-toolbar>        
         <md-card-content>
             <md-list>
                 <md-list-item ng-repeat="winner in battleCtrl.rounds">

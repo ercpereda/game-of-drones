@@ -68,8 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.html" />
-    <Content Include="src\core\services\game-of-drones-core.js" />
-    <Content Include="src\core\referee.js" />
+    <Content Include="src\core\game-of-drones-core.js" />
+    <Content Include="src\core\services\referee.js" />
     <Content Include="src\game-of-drones.js" />
     <Content Include="src\local\controllers\local-battle-controller.js" />
     <Content Include="src\local\controllers\select-players-controller.js" />

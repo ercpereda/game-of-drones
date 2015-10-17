@@ -5,7 +5,7 @@
         .config(configReferee);
 
     function configRoutes($routeProvider) {
-        $routeProvider.when('/local/selecplayers', {
+        $routeProvider.when('/local/selectplayers', {
             templateUrl: 'src/local/views/select-players.html',
             controller: 'SelectPlayersController as spCtrl'
         });
@@ -16,6 +16,6 @@
     }
 
     function configReferee(refereeProvider) {
-        refereeProvider.setBaseUrl('http://localhost:5912/');
+        refereeProvider.setBaseUrl('http://localhost:5864/');
     }
 })()
