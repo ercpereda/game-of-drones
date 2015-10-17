@@ -1,0 +1,22 @@
+{
+  "name": "GameOfDrones",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ercpereda/game-of-drones",
+  "authors": [
+    "ercpereda <ercp42@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.11.4",
+    "angular-route": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angular-mocks": "~1.4.7"
+  }
+}

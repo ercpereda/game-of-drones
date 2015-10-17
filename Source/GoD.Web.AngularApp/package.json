@@ -1,0 +1,23 @@
+{
+  "name": "GameOfDrones",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ercpereda <ercp42@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-karma": "^0.12.1",
+    "grunt-protractor-runner": "^2.1.0",
+    "grunt-protractor-webdriver": "^0.2.5",
+    "karma": "^0.13.11",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-jasmine": "^0.3.6",
+    "load-grunt-tasks": "^3.3.0",
+    "protractor": "^2.5.1"
+  }
+}
