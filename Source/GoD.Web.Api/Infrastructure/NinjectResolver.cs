@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http.Dependencies;
 using GoD.Data;
 using GoD.Domain;
+using God.Services;
 using Ninject;
 using Ninject.Extensions.ChildKernel;
 using Ninject.Web.Common;
@@ -38,7 +39,8 @@ namespace GoD.Web.Api.Infrastructure
         }
         private void AddBindings(IKernel kernel)
         {
-            kernel.Bind<IRepository>().To<Repository>().InRequestScope();            
+            kernel.Bind<IRepository>().To<Repository>().InRequestScope();
+            kernel.Bind<IReferee>().To<Referee>().InSingletonScope();
         }       
     }
 }

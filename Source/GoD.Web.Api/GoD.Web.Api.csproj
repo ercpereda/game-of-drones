@@ -286,6 +286,10 @@
       <Project>{6fd5f845-2b0a-4403-a55b-800941e69bc4}</Project>
       <Name>GoD.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\God.Services\God.Services.csproj">
+      <Project>{27234b52-28a9-4d13-835f-7fc0bd5be1e2}</Project>
+      <Name>God.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
