@@ -1,4 +1,4 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones', []);
+        .module('gameOfDrones', ['gameOfDrones.local']);
 })()
