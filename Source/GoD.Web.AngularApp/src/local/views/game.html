@@ -1,5 +1,5 @@
 ﻿<div layout="row" layout-sm="column">
-    <div flex="10"></div>
+    <div flex="5"></div>
     <md-card flex class="md-whiteframe-z2">
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
             <h1 class="md-headline">{{battleCtrl.player1Name}}: {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}}: {{battleCtrl.player2Score}}</h1>
@@ -12,7 +12,7 @@
                     </md-button>
                 </md-fab-trigger>
                 <md-fab-actions>
-                    <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                    <md-button aria-label="Twitter" class="md-fab md-raised md-mini" ng-click="battleCtrl.play('rock')">
                         <md-icon md-svg-src="img/icons/twitter.svg" aria-label="Twitter"></md-icon>
                     </md-button>
                     <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
@@ -20,7 +20,7 @@
                     </md-button>
                     <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
                         <md-icon md-svg-src="img/icons/hangout.svg" aria-label="Google Hangout"></md-icon>
-                    </md-button>                    
+                    </md-button>
                 </md-fab-actions>
             </md-fab-speed-dial>
         </div>
@@ -30,12 +30,18 @@
             <h1 class="md-headline">Scores</h1>
         </md-toolbar>
         <md-card-content>
-            <md-list>
-                <md-list-item ng-repeat="winner in battleCtrl.rounds">
-                    {{$index + 1}} - {{winner}}
-                </md-list-item>
-            </md-list>
+            <md-content>
+                <md-list>
+                    <md-list-item class="md-2-line" ng-repeat="winner in battleCtrl.rounds">
+                        <div class="md-list-item-text">
+                            <h3>Round {{$index + 1}}</h3>
+                            <h4>{{winner}}</h4>
+                        </div>
+                    </md-list-item>
+                    <md-divider md-inset ng-if="!$last"></md-divider>
+                </md-list>
+            </md-content>
         </md-card-content>
     </md-card>
-    <div flex="10"></div>
+    <div flex="5"></div>
 </div>

@@ -66,6 +66,14 @@ namespace GoD.Data.Migrations
                 Game = game2
             });
 
+            var classicRules = new RuleSet
+            {
+                Name = "Classic",
+                Rules = "[{'Papper': 'Rock'}, {'Rock': 'Scissors'}, {'Scissors': 'Papper'}]"
+            };
+
+            context.RuleSets.Add(classicRules);
+
             context.SaveChanges();
         }
     }
