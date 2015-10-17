@@ -67,6 +67,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\game-of-drones.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
