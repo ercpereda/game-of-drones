@@ -30,3 +30,4 @@ _ReSharper*/
 
 Libraries/
 Source/GoD.Web.Api/App_Data/
+node_modules
