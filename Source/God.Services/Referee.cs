@@ -12,16 +12,14 @@ namespace God.Services
         {
             foreach (var rule in rules)
             {
-                var key = rule.Key.ToLower();
-                var value = rule.Value.ToLower();
-                if (key == player1Move && value == player2Move)
+                var name = rule.name.ToLower();
+                foreach (var beats in rule.beats)
                 {
-                    return 1;
-                }
-                if (key == player2Move && value == player1Move)
-                {
-                    return 2;
-                }
+                    if (name == player1Move && beats == player2Move)
+                        return 1;
+                    if (name == player2Move && beats == player1Move)
+                        return 2;
+                }                
             }
 
             return 0;
