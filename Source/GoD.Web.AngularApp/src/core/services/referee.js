@@ -29,7 +29,7 @@
                 $http({
                     method: 'GET',
                     url: provider.baseUrl + provider.decideUrl,
-                    data: { player1Move: player1Move, player2Move: player2Move }
+                    params: { player1Move: player1Move, player2Move: player2Move }
                 }).success(function(data, status, headers, cfg) {
                     deferred.resolve(data);
                 }).error(function(data, status, headers, cfg) {
