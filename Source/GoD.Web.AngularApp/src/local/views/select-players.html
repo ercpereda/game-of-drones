@@ -1,0 +1,22 @@
+﻿<div layout="row">
+    <div flex="30"></div>
+    <md-card class="md-whiteframe-z5" flex>
+        <img class="md-card-image" src='images/city.jpg' />
+        <md-button class="md-fab" aria-label='Start Game' ng-click="spCtrl.startGame()">H</md-button>
+        <md-card-content>
+            <form name="playersForm">
+                <div layout-sm="column">
+                    <md-input-container flex>
+                        <label>Player1</label>
+                        <input ng-model="spCtrl.player1" />
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Player2</label>
+                        <input ng-model="spCtrl.player2" />
+                    </md-input-container>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+    <div flex="30"></div>
+</div>

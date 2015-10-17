@@ -3,7 +3,9 @@
         .module('gameOfDrones.local')
         .controller('SelectPlayersController', selectsPlayersController);
 
-    function selectsPlayersController() {
+    selectsPlayersController.$inject = ['$log'];
+
+    function selectsPlayersController($log) {
         var vm = this;
 
         vm.player1 = 'player1';
@@ -11,7 +13,7 @@
         vm.startGame = startGame;
 
         function startGame() {
-            
+            $log.info('start game');
         }
     }
 })()
