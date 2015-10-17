@@ -8,5 +8,9 @@
             templateUrl: 'src/local/views/select-players.html',
             controller: 'SelectPlayersController as spCtrl'
         });
+        $routeProvider.when('/local/game', {
+            templateUrl: 'src/local/views/game.html',
+            controller: 'LocalBattleController as battleCtrl'
+        });
     }
 })()
