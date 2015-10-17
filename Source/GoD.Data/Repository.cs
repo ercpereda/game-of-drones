@@ -15,5 +15,10 @@ namespace GoD.Data
         {
             return context.RuleSets.FirstOrDefault(r => r.Name == name);
         }
+
+        public IEnumerable<RuleSet> Rules
+        {
+            get { return context.RuleSets; }
+        }
     }
 }

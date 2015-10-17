@@ -9,5 +9,6 @@ namespace GoD.Domain
     public interface IRepository
     {
         RuleSet GetRuleSet(string name);
+        IEnumerable<RuleSet> Rules { get; }
     }
 }
