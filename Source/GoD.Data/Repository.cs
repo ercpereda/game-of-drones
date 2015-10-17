@@ -9,5 +9,11 @@ namespace GoD.Data
 {
     public class Repository : IRepository
     {
+        private GoDContext context = new GoDContext();
+
+        public RuleSet GetRuleSet(string name)
+        {
+            return context.RuleSets.FirstOrDefault(r => r.Name == name);
+        }
     }
 }

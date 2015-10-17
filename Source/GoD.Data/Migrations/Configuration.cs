@@ -69,7 +69,7 @@ namespace GoD.Data.Migrations
             var classicRules = new RuleSet
             {
                 Name = "Classic",
-                Rules = "[{'Papper': 'Rock'}, {'Rock': 'Scissors'}, {'Scissors': 'Papper'}]"
+                Rules = "[{\"Key\":\"Rock\",\"Value\":\"Scissors\"},{\"Key\":\"Scissors\",\"Value\":\"Papper\"},{\"Key\":\"Papper\",\"Value\":\"Rock\"}]"
             };
 
             context.RuleSets.Add(classicRules);
