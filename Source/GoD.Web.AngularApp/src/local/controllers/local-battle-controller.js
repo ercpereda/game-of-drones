@@ -16,7 +16,7 @@
         vm.player1Score = 0;
         vm.player2Score = 0;
         vm.winner = 0;
-        vm.rounds = [];
+        vm.rounds = ['player1', 'player', 'player2'];
 
         function play(option) {
             if (vm.currentPlayer === 1) {
