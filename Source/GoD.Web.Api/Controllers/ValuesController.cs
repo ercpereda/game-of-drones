@@ -4,12 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using GoD.Domain;
 
 namespace GoD.Web.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
+        public ValuesController(IRepository repository)
+        {}
+
         // GET api/values
         public IEnumerable<string> Get()
         {
