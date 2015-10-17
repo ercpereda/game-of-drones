@@ -1,15 +1,34 @@
-﻿<div layout="row">
+﻿<div layout="row" layout-sm="column">
     <div flex="10"></div>
     <md-card flex class="md-whiteframe-z2">
-        <md-toolbar layout="row" class="md-whiteframe-z1">
-            <h1>{{battleCtrl.player1Name}}: {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}}: {{battleCtrl.player2Score}}</h1>                
+        <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
+            <h1 class="md-headline">{{battleCtrl.player1Name}}: {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}}: {{battleCtrl.player2Score}}</h1>
         </md-toolbar>
-        <md-button class="md-fab" aria-label='Play' ng-click="battleCtrl.play('papper')">H</md-button>
+        <div class="lock-size" layout="row" layout-align="top left">
+            <md-fab-speed-dial class="md-fling" md-direction="down">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-warn">
+                        <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+                    <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src="img/icons/twitter.svg" aria-label="Twitter"></md-icon>
+                    </md-button>
+                    <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src="img/icons/facebook.svg" aria-label="Facebook"></md-icon>
+                    </md-button>
+                    <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                        <md-icon md-svg-src="img/icons/hangout.svg" aria-label="Google Hangout"></md-icon>
+                    </md-button>                    
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
     </md-card>
     <md-card flex class="md-whiteframe-z2">
-        <md-toolbar layout="row" class="md-whiteframe-z1">
-            <h1>Scores</h1>            
-        </md-toolbar>        
+        <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
+            <h1 class="md-headline">Scores</h1>
+        </md-toolbar>
         <md-card-content>
             <md-list>
                 <md-list-item ng-repeat="winner in battleCtrl.rounds">

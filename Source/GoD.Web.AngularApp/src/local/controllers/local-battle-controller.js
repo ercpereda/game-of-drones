@@ -28,12 +28,12 @@
                 vm.currentPlayer = 1;
                 referee.decide(vm.player1Play, option).then(
                     function (data) {
-                        vm.winner = data.winner;
-                        if (data.winner === 1) {
+                        vm.winner = data;
+                        if (vm.winner === 1) {
                             vm.player1Score += 1;
                             vm.rounds.push(vm.player1Name);
                         }
-                        else if (data.winner === 2) {
+                        else if (vm.winner === 2) {
                             vm.player2Score += 1;
                             vm.rounds.push(vm.player2Name);
                         } else {
