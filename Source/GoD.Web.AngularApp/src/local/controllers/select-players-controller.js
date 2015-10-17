@@ -3,9 +3,9 @@
         .module('gameOfDrones.local')
         .controller('SelectPlayersController', selectsPlayersController);
 
-    selectsPlayersController.$inject = ['$rootScope', '$log'];
+    selectsPlayersController.$inject = ['$rootScope', '$location'];
 
-    function selectsPlayersController($rootScope, $log) {
+    function selectsPlayersController($rootScope, $location) {
         var vm = this;
 
         vm.player1 = 'player1';
@@ -15,6 +15,8 @@
         function startGame() {
             $rootScope.player1 = vm.player1;
             $rootScope.player2 = vm.player2;
+
+            $location.path('/local/game');
         }
     }
 })()
