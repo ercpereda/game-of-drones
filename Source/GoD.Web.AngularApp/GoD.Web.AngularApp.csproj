@@ -67,6 +67,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Index.html" />
     <Content Include="src\game-of-drones.js" />
     <Content Include="src\local\controllers\select-players-controller.js" />
     <Content Include="src\local\game-of-drones-local.js" />
