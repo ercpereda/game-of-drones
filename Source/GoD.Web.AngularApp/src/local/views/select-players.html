@@ -1,8 +1,9 @@
-﻿<div layout="row">
-    <div flex="30"></div>
+﻿<div layout="row" layout-align="center center">
     <md-card class="md-whiteframe-z5" flex>
         <img class="md-card-image" src='images/city.jpg' />
-        <md-button class="md-fab" aria-label='Start Game' ng-click="spCtrl.startGame()">H</md-button>
+        <md-button class="md-fab  md-fab-bottom-right" aria-label='Start Game' ng-click="spCtrl.startGame()">
+            <ng-md-icon icon="play_arrow"></ng-md-icon>
+        </md-button>
         <md-card-content>
             <form name="playersForm">
                 <div layout-sm="column">
@@ -18,5 +19,4 @@
             </form>
         </md-card-content>
     </md-card>
-    <div flex="30"></div>
 </div>

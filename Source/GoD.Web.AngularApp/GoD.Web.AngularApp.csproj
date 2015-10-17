@@ -70,6 +70,7 @@
     <Content Include="Index.html" />
     <Content Include="src\core\game-of-drones-core.js" />
     <Content Include="src\core\services\referee.js" />
+    <Content Include="src\css\app.css" />
     <Content Include="src\game-of-drones.js" />
     <Content Include="src\local\controllers\local-battle-controller.js" />
     <Content Include="src\local\controllers\select-players-controller.js" />
