@@ -1,4 +1,4 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones.core', []);
+        .module('gameOfDrones.core', ['ngResource']);
 })()
