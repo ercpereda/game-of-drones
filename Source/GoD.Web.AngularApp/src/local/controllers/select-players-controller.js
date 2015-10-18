@@ -15,12 +15,7 @@
         vm.ruleSets = rules.query();
 
         function startGame() {
-            console.log(vm.rules);
-            $rootScope.player1 = vm.player1;
-            $rootScope.player2 = vm.player2;
-            $rootScope.ruleSet = vm.ruleSet;
-
-            $location.path('/local/game');
+            $location.path('/local/game/' + vm.player1 + '/' + vm.player2 + '/' + vm.ruleSet);
         }
     }
 })()

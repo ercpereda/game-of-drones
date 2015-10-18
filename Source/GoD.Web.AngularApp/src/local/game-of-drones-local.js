@@ -10,7 +10,7 @@
             templateUrl: 'src/local/views/select-players.html',
             controller: 'SelectPlayersController as spCtrl'
         });
-        $routeProvider.when('/local/game', {
+        $routeProvider.when('/local/game/:player1/:player2/:ruleSet', {
             templateUrl: 'src/local/views/game.html',
             controller: 'LocalBattleController as battleCtrl'
         });

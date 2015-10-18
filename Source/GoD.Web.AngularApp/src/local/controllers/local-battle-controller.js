@@ -3,16 +3,16 @@
         .module('gameOfDrones.local')
         .controller('LocalBattleController', localBattleController);
 
-    localBattleController.$inject = ['$rootScope', '$location', 'referee', 'rules'];
+    localBattleController.$inject = ['$routeParams', '$location', 'referee', 'rules'];
 
-    function localBattleController($rootScope, $location, referee, rules) {
+    function localBattleController($routeParams, $location, referee, rules) {
         var vm = this;
 
-        if (!$rootScope.player1 || !$rootScope.player1)
+        if (!$routeParams.player1 || !$routeParams.player1 || !$routeParams.ruleSet)
             $location.path('/local/selectplayers');
 
-        vm.player1Name = $rootScope.player1;
-        vm.player2Name = $rootScope.player2;
+        vm.player1Name = $routeParams.player1;
+        vm.player2Name = $routeParams.player2;
         vm.currentPlayer = 1;
         vm.player1Play = '';
         vm.player1PlayImg = '';
@@ -28,7 +28,7 @@
         vm.endRound = false;
         vm.inBattle = true;
 
-        var rules = rules.get({ id: $rootScope.ruleSet }, function () {
+        var rules = rules.get({ id: $routeParams.ruleSet }, function () {
             vm.rules = angular.fromJson(rules.Rules);
         });        
        
@@ -43,7 +43,7 @@
             }
             else if (vm.currentPlayer === 2) {
                 
-                referee.decide(vm.player1Play, option, $rootScope.ruleSet).then(
+                referee.decide(vm.player1Play, option, $routeParams.ruleSet).then(
                     function (data) {
                         vm.winner = data;
                         if (vm.winner === 1) {
