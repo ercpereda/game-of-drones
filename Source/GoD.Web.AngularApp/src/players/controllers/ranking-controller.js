@@ -3,9 +3,18 @@
         .module('gameOfDrones.players')
         .controller('RankingController', rankingController);
 
-    rankingController.$inject = [];
+    rankingController.$inject = ['ranking'];
 
-    function rankingController(rules) {
-        var vm = this;        
+    function rankingController(ranking) {
+        var vm = this;
+
+        ranking.get().then(
+            function(data) {
+                vm.rankingsUrl = data;
+            },
+            function(status) {
+                
+            }
+        );
     }
 })()
