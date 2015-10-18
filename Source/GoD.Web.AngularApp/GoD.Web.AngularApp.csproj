@@ -75,9 +75,11 @@
     <Content Include="src\game-of-drones.js" />
     <Content Include="src\local\controllers\local-battle-controller.js" />
     <Content Include="src\local\controllers\select-players-controller.js" />
+    <Content Include="src\local\controllers\winner-declaration-controller.js" />
     <Content Include="src\local\game-of-drones-local.js" />
     <Content Include="src\local\views\game.html" />
     <Content Include="src\local\views\select-players.html" />
+    <Content Include="src\local\views\winner-declaration.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

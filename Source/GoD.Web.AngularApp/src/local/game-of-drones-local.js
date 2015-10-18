@@ -14,6 +14,10 @@
             templateUrl: 'src/local/views/game.html',
             controller: 'LocalBattleController as battleCtrl'
         });
+        $routeProvider.when('/local/declarewinner/:player', {
+            templateUrl: 'src/local/views/winner-declaration.html',
+            controller: 'WinnerDeclarationController as winnerCtrl'
+        });
     }
 
     function configReferee(refereeProvider) {
