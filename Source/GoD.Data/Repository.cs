@@ -18,7 +18,7 @@ namespace GoD.Data
         
         public RuleSet GetRuleSet(string name)
         {
-            return context.RuleSets.FirstOrDefault(r => r.Name == name);
+            return context.RuleSets.FirstOrDefault(r => String.Equals(r.Name, name, StringComparison.CurrentCultureIgnoreCase));
         }
 
         public IEnumerable<RuleSet> Rules
@@ -33,7 +33,7 @@ namespace GoD.Data
 
         public Player GetPlayer(string name)
         {
-            return context.Players.FirstOrDefault(p => p.Name == name);
+            return context.Players.FirstOrDefault(p => p.Name.ToLower() == name.ToLower());
         }
 
         public void AddPlayer(Player player)

@@ -16,5 +16,15 @@ namespace GoD.Domain
         {
             Scores = new List<GameScore>();
         }
+
+        public void AddScore(int score, Game game)
+        {            
+            Scores.Add(new GameScore
+            {
+                Player = this,
+                Game = game,
+                Score = score
+            });
+        }
     }
 }
