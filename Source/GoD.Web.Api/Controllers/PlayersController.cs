@@ -21,7 +21,7 @@ namespace GoD.Web.Api.Controllers
         [Route("Ranking")]
         public IHttpActionResult GetRaking()
         {
-            var result = _repository.Players.Select(p => new { p.Name, p.GamesWins, p.GamesLoses }).OrderBy(p => p.GamesWins);
+            var result = _repository.Players.Select(p => new { p.Name, p.GamesWins, p.GamesLoses }).OrderByDescending(p => p.GamesWins);
             return Ok(result);
         }
     }

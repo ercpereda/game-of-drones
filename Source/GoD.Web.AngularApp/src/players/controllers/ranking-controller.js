@@ -10,7 +10,7 @@
 
         ranking.get().then(
             function(data) {
-                vm.rankingsUrl = data;
+                vm.ranking = data;
             },
             function(status) {
                 

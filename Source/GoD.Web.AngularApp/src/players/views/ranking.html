@@ -7,18 +7,14 @@
         <md-card-content>
             <md-content>
                 <md-list>
-                    <!--<md-list-item class="md-2-line" ng-repeat="ruleSet in rulesCtrl.ruleSets">
+                    <md-list-item class="md-3-line" ng-repeat="line in rankingCtrl.ranking">
                         <div class="md-list-item-text">
-                            <h3>{{ruleSet.Name}}</h3>
-                            <div layout="row" layout-align="center center">
-                                <div flex ng-repeat="rule in ruleSet.Rules">
-                                    <ng-md-icon icon="{{rule.img}}"></ng-md-icon>
-                                    <h4>{{rule.name}}</h4>
-                                </div>
-                            </div>
+                            <h3>{{line.Name}}</h3>
+                            <h4>Game Wins: {{line.GamesWins}}</h4>
+                            <h4>Game Loses: {{line.GamesLoses}}</h4>
                         </div>
                         <md-divider ng-if="!$last"></md-divider>
-                    </md-list-item>-->
+                    </md-list-item>
                 </md-list>
             </md-content>
         </md-card-content>
