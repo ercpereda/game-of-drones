@@ -18,7 +18,7 @@ namespace GoD.Data
         
         public RuleSet GetRuleSet(string name)
         {
-            return context.RuleSets.FirstOrDefault(r => String.Equals(r.Name, name, StringComparison.CurrentCultureIgnoreCase));
+            return context.RuleSets.FirstOrDefault(r => r.Name.ToLower() == name.ToLower());
         }
 
         public IEnumerable<RuleSet> Rules
