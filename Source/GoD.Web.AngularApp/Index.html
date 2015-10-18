@@ -1,40 +1,57 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="gameOfDrones">
 <head>
     <title>Game of Drones</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="src/css/app.css"/>
+    <link rel="stylesheet" href="src/css/app.css" />
 </head>
-<body layout="row" ng-app="gameOfDrones">
+<body layout="row" ng-controller="AppMainController as mainCtrl">
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
                 md-component-id="left-sidenav"
                 md-is-locked-open="$mdMedia('gt-sm')">
 
         <md-toolbar class="md-tall md-hue-2">
             <span flex></span>
-            <div layout="column" class="md-toolbar-tools-bottom inset">
-                <user-avatar></user-avatar>
-                <span></span>
-                <div>Firstname Lastname</div>
-                <div>email@domainname.com</div>
+            <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">
+                <ng-md-icon icon="airplanemode_on" size="128" style="fill: white"></ng-md-icon>
+                <span></span>                
             </div>
         </md-toolbar>
+        <md-list>
+            <span ng-repeat="item in mainCtrl.menu">
+                <md-subheader>{{item.name}}</md-subheader>
+                <md-item ng-repeat="subitem in item.items">
+                    <a class="ng-button" ng-click="mainCtrl.go(subitem.url)">
+                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                            <div class="inset">
+                                <ng-md-icon icon="{{subitem.icon}}"></ng-md-icon>
+                            </div>
+                            <div class="inset">
+                                {{subitem.name}}
+                            </div>
+                        </md-item-content>
+                    </a>
+
+                </md-item>
+                <md-divider ng-if="!$last"></md-divider>
+            </span>
+        </md-list>
     </md-sidenav>
-    
+
     <div flex layout="column" tabindex="-1" role="main" class="md-whiteframe-z2">
 
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
-            <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+            <md-button class="menu" hide-gt-sm ng-click="mainCtrl.toggleSidenav('left-sidenav')" aria-label="Show Menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
             <h1 class="md-headline">Game of Drones</h1>
         </md-toolbar>
 
         <md-content flex id="content">
-            <ng-view></ng-view>            
+            <ng-view></ng-view>
         </md-content>
 
     </div>
@@ -53,11 +70,11 @@
     <script src="src/core/services/referee.js"></script>
     <script src="src/core/services/rules.js"></script>
     <script src="src/core/services/ranking.js"></script>
-    
+
     <!-- Rules App -->
     <script src="src/rules/game-of-drones-rules.js"></script>
     <script src="src/rules/controllers/manage-rules-controller.js"></script>
-    
+
     <!-- Players App -->
     <script src="src/players/game-of-drones-players.js"></script>
     <script src="src/players/controllers/ranking-controller.js"></script>
@@ -70,5 +87,6 @@
 
     <!-- Main App -->
     <script src="src/game-of-drones.js"></script>
+    <script src="src/game-of-drones-main-controller.js"></script>
 </body>
 </html>
