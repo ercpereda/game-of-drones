@@ -62,6 +62,17 @@
                             vm.player1Color = 'blue';
                             vm.player2Color = 'blue';
                         }
+
+                        if (vm.player1Score == 3 || vm.player2Score == 3) {
+                            referee.declareWinner(vm.player1Name, vm.player2Name, vm.player1Score, vm.player2Score).then(
+                                function() {
+                                    $location.path('/local/winnerdeclaration/' + vm.player1Score == 3 ? vm.player1Name : vm.player2Name);
+                                },
+                                function() {
+                                }
+                            );
+                        }
+
                         vm.currentPlayer = 1;
                         vm.notification = 'Turn of ' + vm.player1Name;
                         vm.inBattle = false;
