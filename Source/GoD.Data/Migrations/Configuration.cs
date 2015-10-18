@@ -33,13 +33,15 @@ namespace GoD.Data.Migrations
             {
                 Date = DateTime.Now.AddDays(1),
                 Player1 = player1,
-                Player2 = player2
+                Player2 = player2,
+                Winner = player1
             };
             var game2 = new Game
             {
                 Date = DateTime.Now.AddDays(1).AddHours(1),
                 Player1 = player1,
-                Player2 = player2
+                Player2 = player2,
+                Winner = player2
             };
 
             context.Games.Add(game1);

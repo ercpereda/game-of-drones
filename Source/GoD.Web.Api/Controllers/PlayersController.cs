@@ -21,7 +21,8 @@ namespace GoD.Web.Api.Controllers
         [Route("Ranking")]
         public IHttpActionResult GetRaking()
         {
-            return Ok();
+            var result = _repository.Players.Select(p => new { p.Name, p.GamesWins, p.GamesLoses });
+            return Ok(result);
         }
     }
 }

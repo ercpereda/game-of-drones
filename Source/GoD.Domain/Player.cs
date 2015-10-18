@@ -17,6 +17,16 @@ namespace GoD.Domain
             Scores = new List<GameScore>();
         }
 
+        public int GamesWins
+        {
+            get { return Scores.Count(s => s.Game.Winner.Name == Name); }
+        }
+
+        public int GamesLoses
+        {
+            get { return Scores.Count(s => s.Game.Winner.Name != Name); }
+        }
+
         public void AddScore(int score, Game game)
         {            
             Scores.Add(new GameScore
@@ -25,6 +35,6 @@ namespace GoD.Domain
                 Game = game,
                 Score = score
             });
-        }
+        }        
     }
 }

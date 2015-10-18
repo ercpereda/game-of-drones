@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,9 @@ namespace GoD.Data
 
         public IEnumerable<Player> Players
         {
-            get { return context.Players; }
+            get { return context.Players
+                    .Include(p => p.Scores)
+                    .Include(p => p.Scores.Select(s => s.Game.Winner)); }
         }
 
         public void AddPlayer(Player player)

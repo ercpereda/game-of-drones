@@ -59,6 +59,7 @@ namespace GoD.Web.Api.Controllers
                 Date = DateTime.Now,
                 Player1 = player1,
                 Player2 = player2,
+                Winner = data.Player1Score > data.Player2Score ? player1 : player2
             };
 
             _repository.AddGame(game);
