@@ -1,6 +1,6 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones.rules', [])
+        .module('gameOfDrones.rules', ['gameOfDrones.core'])
         .config(configRoutes);
 
     function configRoutes($routeProvider) {
