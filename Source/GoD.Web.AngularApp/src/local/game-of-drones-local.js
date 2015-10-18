@@ -6,18 +6,20 @@
         .config(configRules);
 
     function configRoutes($routeProvider) {
-        $routeProvider.when('/local/selectplayers', {
-            templateUrl: 'src/local/views/select-players.html',
-            controller: 'SelectPlayersController as spCtrl'
-        });
-        $routeProvider.when('/local/game/:player1/:player2/:ruleSet', {
-            templateUrl: 'src/local/views/game.html',
-            controller: 'LocalBattleController as battleCtrl'
-        });
-        $routeProvider.when('/local/declarewinner/:player', {
-            templateUrl: 'src/local/views/winner-declaration.html',
-            controller: 'WinnerDeclarationController as winnerCtrl'
-        });
+        $routeProvider
+            .when('/local/selectplayers', {
+                templateUrl: 'src/local/views/select-players.html',
+                controller: 'SelectPlayersController as spCtrl'
+            })
+            .when('/local/game/:player1/:player2/:ruleSet', {
+                templateUrl: 'src/local/views/game.html',
+                controller: 'LocalBattleController as battleCtrl'
+            })
+            .when('/local/declarewinner/:player', {
+                templateUrl: 'src/local/views/winner-declaration.html',
+                controller: 'WinnerDeclarationController as winnerCtrl'
+            })
+            .otherwise({ redirectTo: '/local/selectplayers' });
     }
 
     function configReferee(refereeProvider) {
