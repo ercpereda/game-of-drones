@@ -2,37 +2,53 @@
     <div flex="5"></div>
     <md-card flex class="md-whiteframe-z2">
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
-            <h1 class="md-headline">{{battleCtrl.player1Name}}: {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}}: {{battleCtrl.player2Score}}</h1>
+            <h1 class="md-headline">{{battleCtrl.notification}}</h1>
         </md-toolbar>
         <div class="lock-size" layout="row" layout-align="top left">
-            <md-fab-speed-dial class="md-fling" md-direction="down">
+            <md-fab-speed-dial class="md-fling" md-direction="right">
                 <md-fab-trigger>
                     <md-button aria-label="menu" class="md-fab md-warn">
-                        <ng-md-icon icon="play_arrow"></ng-md-icon> 
+                        <ng-md-icon icon="play_arrow"></ng-md-icon>
                     </md-button>
                 </md-fab-trigger>
                 <md-fab-actions>
-                    <md-button ng-repeat="rule in battleCtrl.rules track by $index" aria-label="{{rule.name}}" class="md-fab md-raised md-mini" ng-click="battleCtrl.play(rule.name)">
+                    <md-button ng-repeat="rule in battleCtrl.rules track by $index" aria-label="{{rule.name}}" class="md-fab md-raised md-mini" ng-click="battleCtrl.play(rule.name, rule.img)">
                         <ng-md-icon icon="{{rule.img}}"></ng-md-icon>           
                     </md-button>                    
                 </md-fab-actions>
             </md-fab-speed-dial>
         </div>
+        <md-card-content>
+            <div layout="row" layout-align="center center" ng-show="battleCtrl.endRound">
+                <md-card>
+                    <md-card-content>
+                        <h2 class="md-title">{{battleCtrl.player1Name}}</h2>
+                        <ng-md-icon icon="{{battleCtrl.player1PlayImg}}" size="128" style="fill: {{battleCtrl.player1Color}}"></ng-md-icon>
+                    </md-card-content>
+                </md-card>
+                <md-card>
+                    <md-card-content>
+                        <h2 class="md-title">{{battleCtrl.player2Name}}</h2>
+                        <ng-md-icon icon="{{battleCtrl.player2PlayImg}}" size="128" style="fill: {{battleCtrl.player2Color}}"></ng-md-icon>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </md-card-content>
     </md-card>
-    <md-card flex class="md-whiteframe-z2">
+    <md-card flex class="md-whiteframe-z2" max-height="500px">
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
-            <h1 class="md-headline">Scores</h1>
+            <h1 class="md-headline">{{battleCtrl.player1Name}} : {{battleCtrl.player1Score}} | {{battleCtrl.player2Name}} : {{battleCtrl.player2Score}}</h1>
         </md-toolbar>
         <md-card-content>
             <md-content>
                 <md-list>
-                    <md-list-item class="md-2-line" ng-repeat="winner in battleCtrl.rounds">
+                    <md-list-item class="md-2-line" ng-repeat="winner in battleCtrl.rounds track by $index">
                         <div class="md-list-item-text">
                             <h3>Round {{$index + 1}}</h3>
                             <h4>{{winner}}</h4>
                         </div>
+                        <md-divider ng-if="!$last"></md-divider>
                     </md-list-item>
-                    <md-divider md-inset ng-if="!$last"></md-divider>
                 </md-list>
             </md-content>
         </md-card-content>

@@ -3,45 +3,70 @@
         .module('gameOfDrones.local')
         .controller('LocalBattleController', localBattleController);
 
-    localBattleController.$inject = ['$rootScope', 'referee', 'rules'];
+    localBattleController.$inject = ['$rootScope', '$location', 'referee', 'rules'];
 
-    function localBattleController($rootScope, referee, rules) {
+    function localBattleController($rootScope, $location, referee, rules) {
         var vm = this;
+
+        if (!$rootScope.player1 || !$rootScope.player1)
+            $location.path('/local/selectplayers');
 
         vm.player1Name = $rootScope.player1;
         vm.player2Name = $rootScope.player2;
         vm.currentPlayer = 1;
         vm.player1Play = '';
+        vm.player1PlayImg = '';
+        vm.player2PlayImg = '';
         vm.play = play;
         vm.player1Score = 0;
         vm.player2Score = 0;
         vm.winner = 0;
         vm.rounds = [];
+        vm.notification = 'Turn of ' + vm.player1Name;
+        vm.player1Color = '';
+        vm.player2Color = '';
+        vm.endRound = false;
+        vm.inBattle = true;
+
         var rules = rules.get({ id: $rootScope.ruleSet }, function () {
             vm.rules = angular.fromJson(rules.Rules);
-        }); // { "Id": 1, "Name": "Classic", "Rules": [{'name': 'rock', 'beats': ['scissors'], 'img': ''},{'name': 'scissors', 'beats': ['papper'], 'img': ''},{'name': 'papper', 'beats': ['rock'], 'img': ''}] };
-
-        function play(option) {
-            console.log(option);
-            if (vm.currentPlayer === 1) {
+        });        
+       
+        function play(option, img) {
+            if (vm.currentPlayer === 1) {                
                 vm.player1Play = option;
+                vm.player1PlayImg = img;
                 vm.currentPlayer = 2;
+                vm.notification = 'Turn of ' + vm.player2Name;
+                vm.inBattle = true;
+                vm.endRound = false;
             }
             else if (vm.currentPlayer === 2) {
-                vm.currentPlayer = 1;
+                
                 referee.decide(vm.player1Play, option, $rootScope.ruleSet).then(
                     function (data) {
                         vm.winner = data;
                         if (vm.winner === 1) {
                             vm.player1Score += 1;
                             vm.rounds.push(vm.player1Name);
+                            vm.player1Color = 'green';
+                            vm.player2Color = 'red';
                         }
                         else if (vm.winner === 2) {
                             vm.player2Score += 1;
                             vm.rounds.push(vm.player2Name);
+                            vm.player1Color = 'red';
+                            vm.player2Color = 'green';
                         } else {
                             vm.rounds.push('------');
+                            vm.player1Color = 'blue';
+                            vm.player2Color = 'blue';
                         }
+                        vm.currentPlayer = 1;
+                        vm.notification = 'Turn of ' + vm.player1Name;
+                        vm.inBattle = false;
+                        vm.endRound = true;
+                        vm.player2PlayImg = img;
                     },
                     function (status) {
                         console.log(status);
@@ -49,6 +74,5 @@
                 );
             }
         };
-
     }
 })()
