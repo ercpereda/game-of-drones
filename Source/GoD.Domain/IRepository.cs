@@ -17,6 +17,7 @@ namespace GoD.Domain
 
         void AddPlayer(Player player);
         Player GetPlayer(string name);
+        IEnumerable<Player> Players { get; } 
         
         void SaveChanges();
     }

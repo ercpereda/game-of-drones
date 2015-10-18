@@ -41,6 +41,11 @@ namespace GoD.Data
             return context.Players.FirstOrDefault(p => p.Name.ToLower() == name.ToLower());
         }
 
+        public IEnumerable<Player> Players
+        {
+            get { return context.Players; }
+        }
+
         public void AddPlayer(Player player)
         {
             context.Players.Add(player);
