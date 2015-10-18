@@ -80,6 +80,9 @@
     <Content Include="src\local\views\game.html" />
     <Content Include="src\local\views\select-players.html" />
     <Content Include="src\local\views\winner-declaration.html" />
+    <Content Include="src\players\controllers\ranking-controller.js" />
+    <Content Include="src\players\game-of-drones-players.js" />
+    <Content Include="src\players\views\ranking.html" />
     <Content Include="src\rules\controllers\manage-rules-controller.js" />
     <Content Include="src\rules\game-of-drones-rules.js" />
     <Content Include="src\rules\views\manage-rules.html" />
