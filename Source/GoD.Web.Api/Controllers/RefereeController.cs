@@ -40,6 +40,9 @@ namespace GoD.Web.Api.Controllers
         [Route("DeclareWinner")]
         public IHttpActionResult PostDeclareWinner(DeclareWinnerBindingModel data)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
             var player1 = _repository.GetPlayer(data.Player1Name);
             if (player1 == null)
             {
