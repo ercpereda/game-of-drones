@@ -80,6 +80,9 @@
     <Content Include="src\local\views\game.html" />
     <Content Include="src\local\views\select-players.html" />
     <Content Include="src\local\views\winner-declaration.html" />
+    <Content Include="src\rules\controllers\manage-rules-controller.js" />
+    <Content Include="src\rules\game-of-drones-rules.js" />
+    <Content Include="src\rules\views\manage-rules.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

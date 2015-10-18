@@ -1,6 +1,6 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones', ['ngMaterial', 'ngMdIcons', 'gameOfDrones.local'])
+        .module('gameOfDrones', ['ngMaterial', 'ngMdIcons', 'gameOfDrones.local', 'gameOfDrones.rules'])
         .config(configTheme);
 
     function configTheme($mdThemingProvider) {
