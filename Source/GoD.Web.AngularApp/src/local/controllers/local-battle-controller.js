@@ -3,9 +3,9 @@
         .module('gameOfDrones.local')
         .controller('LocalBattleController', localBattleController);
 
-    localBattleController.$inject = ['$rootScope', 'referee'];
+    localBattleController.$inject = ['$rootScope', 'referee', 'rules'];
 
-    function localBattleController($rootScope, referee) {
+    function localBattleController($rootScope, referee, rules) {
         var vm = this;
 
         vm.player1Name = $rootScope.player1;
@@ -17,6 +17,9 @@
         vm.player2Score = 0;
         vm.winner = 0;
         vm.rounds = [];
+        var rules = rules.get({ id: $rootScope.ruleSet }, function () {
+            vm.rules = angular.fromJson(rules.Rules);
+        }); // { "Id": 1, "Name": "Classic", "Rules": [{'name': 'rock', 'beats': ['scissors'], 'img': ''},{'name': 'scissors', 'beats': ['papper'], 'img': ''},{'name': 'papper', 'beats': ['rock'], 'img': ''}] };
 
         function play(option) {
             console.log(option);
@@ -26,7 +29,7 @@
             }
             else if (vm.currentPlayer === 2) {
                 vm.currentPlayer = 1;
-                referee.decide(vm.player1Play, option).then(
+                referee.decide(vm.player1Play, option, $rootScope.ruleSet).then(
                     function (data) {
                         vm.winner = data;
                         if (vm.winner === 1) {

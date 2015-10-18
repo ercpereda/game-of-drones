@@ -22,5 +22,14 @@ namespace GoD.Web.Api.Controllers
         {
             return Ok(_repository.Rules);
         }
+
+        public IHttpActionResult Get(int id)
+        {
+            var rules = _repository.GetRuleSet(id);
+            if (rules == null)
+                return NotFound();
+
+            return Ok(rules);
+        }
     }
 }

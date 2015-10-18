@@ -23,7 +23,7 @@ namespace GoD.Web.Api.Controllers
 
         public IHttpActionResult GetDecide(string player1Move, string player2Move, int rulesetId)
         {
-            var ruleset = _repository.GetRuleSet(rulesetName);
+            var ruleset = _repository.GetRuleSet(rulesetId);
             if (ruleset == null)
                 return BadRequest("The rule set no exists");
 

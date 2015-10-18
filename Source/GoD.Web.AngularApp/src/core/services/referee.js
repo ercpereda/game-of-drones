@@ -23,13 +23,13 @@
 
             return service;
 
-            function decide(player1Move, player2Move) {
+            function decide(player1Move, player2Move, rulesetId) {
                 var deferred = $q.defer();
 
                 $http({
                     method: 'GET',
                     url: provider.baseUrl + provider.decideUrl,
-                    params: { player1Move: player1Move, player2Move: player2Move }
+                    params: { player1Move: player1Move, player2Move: player2Move, ruleSetId: rulesetId }
                 }).success(function(data, status, headers, cfg) {
                     deferred.resolve(data);
                 }).error(function(data, status, headers, cfg) {
