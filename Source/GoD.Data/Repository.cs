@@ -26,6 +26,11 @@ namespace GoD.Data
             get { return context.RuleSets; }
         }
 
+        public void AddRuleSet(RuleSet ruleSet)
+        {
+            context.RuleSets.Add(ruleSet);
+        }
+
         public void AddGame(Game game)
         {
             context.Games.Add(game);
@@ -44,6 +49,6 @@ namespace GoD.Data
         public void SaveChanges()
         {
             context.SaveChanges();
-        }
+        }        
     }
 }
