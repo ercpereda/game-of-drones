@@ -11,5 +11,12 @@ namespace GoD.Domain
         RuleSet GetRuleSet(string name);
         RuleSet GetRuleSet(int id);
         IEnumerable<RuleSet> Rules { get; }
+
+        void AddGame(Game game);
+
+        void AddPlayer(Player player);
+        Player GetPlayer(string name);
+        
+        void SaveChanges();
     }
 }

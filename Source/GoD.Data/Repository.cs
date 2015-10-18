@@ -25,6 +25,25 @@ namespace GoD.Data
         {
             get { return context.RuleSets; }
         }
-        
+
+        public void AddGame(Game game)
+        {
+            context.Games.Add(game);
+        }
+
+        public Player GetPlayer(string name)
+        {
+            return context.Players.FirstOrDefault(p => p.Name == name);
+        }
+
+        public void AddPlayer(Player player)
+        {
+            context.Players.Add(player);
+        }
+
+        public void SaveChanges()
+        {
+            context.SaveChanges();
+        }
     }
 }
