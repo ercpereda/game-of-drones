@@ -1,6 +1,6 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones.rules', ['ngRoute', 'gameOfDrones.core', 'ngFileUpload'])
+        .module('gameOfDrones.rules', ['ngRoute', 'ngMaterial', 'gameOfDrones.core', 'ngFileUpload'])
         .config(configRoutes);
 
     function configRoutes($routeProvider) {

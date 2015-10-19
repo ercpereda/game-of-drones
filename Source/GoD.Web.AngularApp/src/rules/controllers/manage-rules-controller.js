@@ -3,9 +3,9 @@
         .module('gameOfDrones.rules')
         .controller('ManageRulesController', manageRulesController);
 
-    manageRulesController.$inject = ['rules', 'Upload'];
+    manageRulesController.$inject = ['rules', 'Upload', '$mdToast'];
 
-    function manageRulesController(rules, Upload) {
+    function manageRulesController(rules, Upload, $mdToast) {
         var vm = this;
 
         vm.upload = upload;
@@ -24,9 +24,18 @@
                 url: 'http://localhost:5864/api/rules',
                 data: { file: file }
             }).then(function (resp) {
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content('Rules uploaded')
+                        .position('top right')
+                        .hideDelay(5000)
+                );
                 rules.query(loadRuleSets);
             }, function (resp) {
-                console.log('Error status: ' + resp.status);
+                $mdToast.simple()
+                        .content('Rules not uploaded: Something was wrong')
+                        .position('top right')
+                        .hideDelay(5000)
             }, function (evt) {
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
