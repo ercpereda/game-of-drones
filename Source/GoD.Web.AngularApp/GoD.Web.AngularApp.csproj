@@ -95,8 +95,10 @@
     <Content Include="src\rules\controllers\manage-rules-controller.js" />
     <Content Include="src\rules\game-of-drones-rules.js" />
     <Content Include="src\rules\views\manage-rules.html" />
+    <Content Include="test\spec\core\ranking-service-specs.js" />
     <Content Include="test\spec\game-of-drones-specs.js" />
     <Content Include="test\SpecRunner.html" />
+    <Content Include="test\spec\players\ranking-controller-specs.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
