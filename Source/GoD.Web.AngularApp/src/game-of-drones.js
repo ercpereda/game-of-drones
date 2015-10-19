@@ -1,7 +1,13 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones', ['ngMaterial', 'ngMdIcons', 'gameOfDrones.local', 'gameOfDrones.rules', 'gameOfDrones.players'])
-        .config(configTheme);
+        .module('gameOfDrones', ['ngMaterial', 'ngMdIcons', 'ngRoute', 'gameOfDrones.local', 'gameOfDrones.rules', 'gameOfDrones.players'])
+        .config(configTheme)
+        .config(configRoutes);
+
+    function configRoutes($routeProvider) {
+        $routeProvider
+            .otherwise({ redirectTo: '/local/selectplayers' });
+    }
 
     function configTheme($mdThemingProvider) {
         var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {

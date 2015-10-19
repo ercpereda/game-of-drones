@@ -18,8 +18,7 @@
             .when('/local/declarewinner/:player', {
                 templateUrl: 'src/local/views/winner-declaration.html',
                 controller: 'WinnerDeclarationController as winnerCtrl'
-            })
-            .otherwise({ redirectTo: '/local/selectplayers' });
+            });
     }
 
     function configReferee(refereeProvider) {

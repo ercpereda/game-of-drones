@@ -1,7 +1,7 @@
-﻿describe('MainCtrl', function () {
+﻿describe('MainApp', function () {
     beforeEach(module('gameOfDrones'));
 
-    it('should assign the correct rapper to scope', function () {
+    it('should be run', function () {
         expect(true).toEqual(true);
     });
 });

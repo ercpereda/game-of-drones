@@ -1,6 +1,6 @@
 ﻿(function () {
     angular
-        .module('gameOfDrones.players', ['gameOfDrones.core'])
+        .module('gameOfDrones.players', ['ngRoute', 'gameOfDrones.core'])
         .config(configRoutes)
         .config(configRanking);
 
