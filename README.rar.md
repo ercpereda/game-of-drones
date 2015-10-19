@@ -1,14 +1,6 @@
 # Instalación
 
-Ejecutar los siguientes comandos:
-
-```shell
-$ git clone https://github.com/ercpereda/game-of-drones.git
-$ cd game-of-drones\Source\GoD.Web.AngularApp
-$ bower install
-```
-
-Luego abrir **Visual Studio** y restaurar los paquetes de nuget. Una vez hecho esto compilar toda la solución.
+1. Descomprimir el fichero y abrir la solución.
 
 # Ejecución
 
