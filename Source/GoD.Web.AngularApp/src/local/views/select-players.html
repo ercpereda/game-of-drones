@@ -5,15 +5,21 @@
             <form name="spCtrl.selectPlayersForm" novalidate>
                 <md-input-container>
                     <label>Player1</label>
-                    <input ng-model="spCtrl.player1" ng-required />
+                    <input ng-model="spCtrl.player1" name="player1" required />
+                    <!--<div ng-messages="spCtrl.selectPlayersForm.player1.$error.required">
+                        <div ng-message="required">This is required.</div>
+                    </div>-->
                 </md-input-container>
                 <md-input-container>
                     <label>Player2</label>
-                    <input ng-model="spCtrl.player2" ng-required />
+                    <input ng-model="spCtrl.player2" name="player2" required />
+                    <!--<div ng-messages="spCtrl.selectPlayersForm.player2.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>-->
                 </md-input-container>
                 <md-input-container>
                     <label>Rule Set</label>
-                    <md-select ng-model="spCtrl.ruleSet" ng-required>
+                    <md-select ng-model="spCtrl.ruleSet" name="ruleset" required>
                         <md-option ng-repeat="rule in spCtrl.ruleSets" value="{{rule.Id}}">
                             {{rule.Name}}
                         </md-option>
@@ -21,8 +27,8 @@
                 </md-input-container>
             </form>
         </md-card-content>
-        <div class="md-actions" layout="row" layout-align="end center" ng-disabled="spCtrl.selectPlayersForm.$invalid">
-            <md-button ng-click="spCtrl.startGame()">Play!</md-button>
+        <div class="md-actions" layout="row" layout-align="end center" >
+            <md-button ng-disabled="spCtrl.selectPlayersForm.$invalid | lowercase" ng-click="spCtrl.startGame()">Play!</md-button>
         </div>
     </md-card>
 </div>
