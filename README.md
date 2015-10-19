@@ -4,13 +4,17 @@
 
 # Ejecución
 
+## WebApi
+
 1. Seleccionar el proyecto **GoD.Web.Api** como projecto de inicio.
 2. Opcional. Para tener datos iniciales en la base de datos, ejecutar el siguiente comando el **Package Manager Console**:
 ```shell
 PM> update-database
 ```
-3. Ejecutar el projecto.
-4. Seleccionar el proyecto **GoD.Web.AngularApp** como projecto de inicio y ejecutar.
+## Angular aplication
+
+1. Ejecutar el projecto.
+2. Seleccionar el proyecto **GoD.Web.AngularApp** como projecto de inicio y ejecutar.
 
 # Notas
 
