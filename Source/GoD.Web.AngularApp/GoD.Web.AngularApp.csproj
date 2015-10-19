@@ -95,10 +95,15 @@
     <Content Include="src\rules\controllers\manage-rules-controller.js" />
     <Content Include="src\rules\game-of-drones-rules.js" />
     <Content Include="src\rules\views\manage-rules.html" />
+    <Content Include="test\spec\game-of-drones-specs.js" />
+    <Content Include="test\SpecRunner.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
