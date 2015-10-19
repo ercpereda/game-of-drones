@@ -2,16 +2,12 @@
     <div flex="10"></div>
     <md-card flex>
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
-            <!--<form name="form1" method="post" action="api/rules/" enctype="multipart/form-data">
-                <md-input-container>
-                    <label>rule file</label>
-                    <input type="file" />
-                </md-input-container>
-                <input type="submit" value="upload"/>                
-            </form>-->
+            <form name="rulesCtrl.uploadRulesForm">
+                <ng-button class="md-button md-raised md-primary" ngf-select="rulesCtrl.upload($file)">Upload</ng-button>
+            </form>
         </md-toolbar>
         <md-card-content>
-            <md-content>
+            <md-content>                
                 <md-list>
                     <md-list-item class="md-2-line" ng-repeat="ruleSet in rulesCtrl.ruleSets">
                         <div class="md-list-item-text">

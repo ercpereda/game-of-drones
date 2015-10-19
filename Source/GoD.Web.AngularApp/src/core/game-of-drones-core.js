@@ -1,4 +1,4 @@
 ﻿(function() {
     angular
-        .module('gameOfDrones.core', ['ngResource']);
+        .module('gameOfDrones.core', ['ngResource', 'ngFileUpload']);
 })()
