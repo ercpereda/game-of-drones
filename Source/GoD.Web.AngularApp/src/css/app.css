@@ -123,6 +123,14 @@ fill: #737373;
 
 }
 
+.md-fab ng-md-icon, md-toolbar ng-md-icon {
+    fill: white;
+}
+
+.md-fab-action-item ng-md-icon {
+    fill: black;
+}
+
 ng-md-icon {
 position: relative;
 top: 5px;
