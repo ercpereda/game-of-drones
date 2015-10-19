@@ -2,18 +2,18 @@
     <md-card class="md-whiteframe-z5">
         <md-card-content>
             <h2 class="md-title">Select players</h2>
-            <form>
+            <form name="spCtrl.selectPlayersForm" novalidate>
                 <md-input-container>
                     <label>Player1</label>
-                    <input ng-model="spCtrl.player1" />
+                    <input ng-model="spCtrl.player1" ng-required />
                 </md-input-container>
                 <md-input-container>
                     <label>Player2</label>
-                    <input ng-model="spCtrl.player2" />
+                    <input ng-model="spCtrl.player2" ng-required />
                 </md-input-container>
                 <md-input-container>
                     <label>Rule Set</label>
-                    <md-select ng-model="spCtrl.ruleSet">
+                    <md-select ng-model="spCtrl.ruleSet" ng-required>
                         <md-option ng-repeat="rule in spCtrl.ruleSets" value="{{rule.Id}}">
                             {{rule.Name}}
                         </md-option>
@@ -21,7 +21,7 @@
                 </md-input-container>
             </form>
         </md-card-content>
-        <div class="md-actions" layout="row" layout-align="end center">
+        <div class="md-actions" layout="row" layout-align="end center" ng-disabled="spCtrl.selectPlayersForm.$invalid">
             <md-button ng-click="spCtrl.startGame()">Play!</md-button>
         </div>
     </md-card>

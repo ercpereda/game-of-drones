@@ -17,25 +17,19 @@
             <span flex></span>
             <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">
                 <ng-md-icon icon="airplanemode_on" size="128" style="fill: white"></ng-md-icon>
-                <span></span>                
+                <span></span>
             </div>
         </md-toolbar>
         <md-list>
             <span ng-repeat="item in mainCtrl.menu">
                 <md-subheader>{{item.name}}</md-subheader>
-                <md-item ng-repeat="subitem in item.items">
-                    <a class="ng-button" ng-click="mainCtrl.go(subitem.url)">
-                        <md-item-content md-ink-ripple layout="row" layout-align="start center">
-                            <div class="inset">
-                                <ng-md-icon icon="{{subitem.icon}}"></ng-md-icon>
-                            </div>
-                            <div class="inset">
-                                {{subitem.name}}
-                            </div>
-                        </md-item-content>
-                    </a>
-
-                </md-item>
+                <md-list-item ng-repeat="subitem in item.items">
+                    <md-button ng-click="mainCtrl.go(subitem.url)">
+                        <ng-md-icon icon="{{subitem.icon}}">
+                        </ng-md-icon>
+                        {{subitem.name}}
+                    </md-button>                    
+                </md-list-item>
                 <md-divider ng-if="!$last"></md-divider>
             </span>
         </md-list>
@@ -50,10 +44,7 @@
             <h1 class="md-headline">Game of Drones</h1>
         </md-toolbar>
 
-        <md-content flex id="content">
-            <ng-view></ng-view>
-        </md-content>
-
+        <ng-view></ng-view>
     </div>
 
     <!-- Angular related scripts -->

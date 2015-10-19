@@ -15,7 +15,8 @@
         vm.ruleSets = rules.query();
 
         function startGame() {
-            $location.path('/local/game/' + vm.player1 + '/' + vm.player2 + '/' + vm.ruleSet);
+            if (vm.selectPlayersForm.$valid)
+                $location.path('/local/game/' + vm.player1 + '/' + vm.player2 + '/' + vm.ruleSet);
         }
     }
 })()
