@@ -1,23 +1,21 @@
-﻿<md-content layout="row" layout-sm="column">
+﻿<md-fab-speed-dial class="md-fab md-fab-top-right md-fling" md-direction="down">
+    <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab md-warn">
+            <ng-md-icon icon="play_arrow"></ng-md-icon>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button ng-repeat="rule in battleCtrl.rules track by $index" aria-label="{{rule.name}}" class="md-fab md-raised md-mini" ng-click="battleCtrl.play(rule.name, rule.img)">
+            <ng-md-icon icon="{{rule.img}}"></ng-md-icon>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial>
+<md-content layout="row" layout-sm="column">
     <div flex="5"></div>
     <md-card flex class="md-whiteframe-z2">
         <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
             <h1 class="md-headline">{{battleCtrl.notification}}</h1>
-        </md-toolbar>
-        <div class="lock-size" layout="row" layout-align="top left">
-            <md-fab-speed-dial class="md-fling" md-direction="right">
-                <md-fab-trigger>
-                    <md-button aria-label="menu" class="md-fab md-warn">
-                        <ng-md-icon icon="play_arrow"></ng-md-icon>
-                    </md-button>
-                </md-fab-trigger>
-                <md-fab-actions>
-                    <md-button ng-repeat="rule in battleCtrl.rules track by $index" aria-label="{{rule.name}}" class="md-fab md-raised md-mini" ng-click="battleCtrl.play(rule.name, rule.img)">
-                        <ng-md-icon icon="{{rule.img}}"></ng-md-icon>           
-                    </md-button>                    
-                </md-fab-actions>
-            </md-fab-speed-dial>
-        </div>
+        </md-toolbar>        
         <md-card-content>
             <div layout="row" layout-align="center center" ng-show="battleCtrl.endRound">
                 <md-card>
