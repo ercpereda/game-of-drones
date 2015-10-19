@@ -59,6 +59,12 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="package.json" />
+    <Content Include="rules_files_examples\Rules1.json" />
+    <Content Include="rules_files_examples\Rules3.json" />
+    <Content Include="rules_files_examples\Rules2.json" />
+    <Content Include="rules_files_examples\Rules6.json" />
+    <Content Include="rules_files_examples\Rules5.json" />
+    <Content Include="rules_files_examples\Rules4.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

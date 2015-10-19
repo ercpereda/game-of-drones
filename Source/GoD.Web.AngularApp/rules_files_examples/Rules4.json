@@ -1,0 +1,4 @@
+{
+	"Name": "Rules4",
+	"Rules": [{"name": "rock", "beats": ["scissors", "dog"], "img": "terrain"},{"name": "scissors", "beats": ["papper"], "img": "content_cut"},{"name": "papper", "beats": ["rock"], "img": "description"},{"name": "strings", "beats": ["dog"], "img": "link"},{"name": "dog", "beats": ["papper"], "img": "hearing"}]
+}
